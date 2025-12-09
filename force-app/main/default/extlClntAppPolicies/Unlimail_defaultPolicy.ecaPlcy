@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ExtlClntAppConfigurablePolicies xmlns="http://soap.sforce.com/2006/04/metadata">
-    <externalClientApplication>ppmail__Unlimail</externalClientApplication>
-    <isEnabled>true</isEnabled>
-    <isOauthPluginEnabled>true</isOauthPluginEnabled>
-    <label>Unlimail_defaultPolicy</label>
-    <startPage>None</startPage>
-</ExtlClntAppConfigurablePolicies>
