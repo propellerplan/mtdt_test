@@ -1,0 +1,9 @@
+/**
+ * Created on 10/01/2023.
+ */
+.day-completion_full {
+    color: rgb(0, 103, 20);
+}
+.day-completion_partial {
+    color: rgb(0, 181, 49);
+}

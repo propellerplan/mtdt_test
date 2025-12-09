@@ -1,0 +1,99 @@
+<!--
+ - Created on 19.04.23.
+ -->
+<aura:component implements="force:lightningQuickAction,flexipage:availableForAllPageTypes" access="global" controller="newCompensationsController" >
+    <aura:attribute name="compensations" type="Compensation__c[]" />
+    <aura:attribute name="currencyOptions" type="List" />
+    <aura:attribute name="categoryOptions" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <c:Utils context="{!this}"/>
+    <lightning:utilityBarAPI aura:id="utilitybar" />
+    <table class="slds-table slds-table_bordered slds-scrollable">
+        <thead>
+        <tr>
+            <th><abbr class="slds-required" title="required">*</abbr>Person</th>
+            <th><abbr class="slds-required" title="required">*</abbr>Date</th>
+            <th>Currency</th>
+            <th>Category</th>
+            <th>Total</th>
+            <th style="max-width: 100px"><abbr class="slds-required" title="required">*</abbr>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <aura:iteration items="{!v.compensations}" var="compensation" indexVar="index">
+            <tr>
+                <td class="myTd">
+                    <c:strike_lookup object="Contact"
+                                     searchField="Name"
+                                     aura:id="inputLookup"
+                                     value="{!compensation.Person__c}"
+                                     filter="Account.Name = 'Propeller Plan'"
+                                     showRecentRecords="true"/>
+                </td>
+                <td class="myTd">
+                    <lightning:input type="date"
+                                     value="{!compensation.Date__c}"
+                                     variant="label-hidden"
+                                     aura:id="inputDate"
+                                     valid="true"
+                                     required="true"/>
+                </td>
+                <td class="myTd">
+                    <lightning:combobox placeholder=""
+                                        variant="label-hidden"
+                                        options="{!v.currencyOptions}"
+                                        value="{!compensation.CurrencyIsoCode}"/>
+                </td>
+                <td class="myTd">
+                    <lightning:combobox placeholder=""
+                                        variant="label-hidden"
+                                        options="{!v.categoryOptions}"
+                                        value="{!compensation.Category__c}"
+                                        aura:id="inputCategory"
+                                        valid="true"/>
+<!--                                        required="true"-->
+                </td>
+                <td class="myTd" style="max-width: 100px">
+                    <lightning:input type="number"
+                                     step="0.01"
+                                     pattern="^-?\d+(\.\d{1,2})?$"
+                                     messageWhenPatternMismatch="Please enter a valid decimal value."
+                                     value="{!compensation.Total__c}"
+                                     variant="label-hidden"/>
+                </td>
+                <td class="myTd">
+                    <lightning:textarea value="{!compensation.Description__c}"
+                                        variant="label-hidden"
+                                        aura:id="inputDescription"
+                                        required="true"
+                                        class="myTextArea"/>
+                </td>
+                <td style="padding-top: 24px; vertical-align: top;">
+                    <lightning:buttonIcon value="{!index}" onclick="{!c.cloneCompensation}" iconName="utility:copy" variant="bare"/>
+                    <lightning:buttonIcon value="{!index}"
+                                          onclick="{!c.deleteCompensation}"
+                                          iconName="utility:close"
+                                          variant="bare"/>
+                </td>
+            </tr>
+        </aura:iteration>
+        <div style="padding-left: 8px">
+            <lightning:button label="Add"
+                              iconName="utility:new"
+                              iconPosition="left"
+                              variant="base"
+                              onclick="{!c.addCompensation}"/>
+
+        </div>
+        </tbody>
+    </table>
+
+    <div class="slds-grid slds-gutters" style="float: right; padding: 20px">
+        <div class="slds-col">
+            <lightning:button variant="brand"
+                              onclick="{!c.handleSave}"
+                              label="Save"/>
+
+        </div>
+    </div>
+</aura:component>

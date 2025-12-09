@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+
+<webLinks>
+    <fullName>a2MPj00000144UHMAY_a0a</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Send Invoice (DO NOT USE)</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>{!URLFOR(&quot;/apex/pdffiller_sfree__airslateApp&quot;,null,[buttonId=&quot;a2MPj00000144UHMAY&quot;,recordId=Invoice__c.Id,objectName=&quot;Invoice__c&quot;])}</url>
+</webLinks>
+</CustomObject>

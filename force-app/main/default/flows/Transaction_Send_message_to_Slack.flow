@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Income_Message</name>
+        <label>Send Income Message</label>
+        <locationX>374</locationX>
+        <locationY>492</locationY>
+        <actionName>slackPostMessage</actionName>
+        <actionType>slackPostMessage</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>slackAppIdForToken</name>
+            <value>
+                <stringValue>A03269G3DNE</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackConversationId</name>
+            <value>
+                <stringValue>C04SB7K9RKQ</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackMessage</name>
+            <value>
+                <elementReference>formulaIncome</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackWorkspaceIdForToken</name>
+            <value>
+                <stringValue>T2D5SCA0K</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>slackPostMessage</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Outcome_Message</name>
+        <label>Send Outcome Message</label>
+        <locationX>110</locationX>
+        <locationY>492</locationY>
+        <actionName>slackPostMessage</actionName>
+        <actionType>slackPostMessage</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>slackAppIdForToken</name>
+            <value>
+                <stringValue>A03269G3DNE</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackConversationId</name>
+            <value>
+                <stringValue>C04SB7K9RKQ</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackMessage</name>
+            <value>
+                <elementReference>formulaOutcome</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackWorkspaceIdForToken</name>
+            <value>
+                <stringValue>T2D5SCA0K</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>slackPostMessage</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Transfer_Message</name>
+        <label>Send Transfer Message</label>
+        <locationX>638</locationX>
+        <locationY>708</locationY>
+        <actionName>slackPostMessage</actionName>
+        <actionType>slackPostMessage</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>slackAppIdForToken</name>
+            <value>
+                <stringValue>A03269G3DNE</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackConversationId</name>
+            <value>
+                <stringValue>C04SB7K9RKQ</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackMessage</name>
+            <value>
+                <elementReference>formulaTransfer</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>slackWorkspaceIdForToken</name>
+            <value>
+                <stringValue>T2D5SCA0K</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>slackPostMessage</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>57.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_Category</name>
+        <label>Check Category</label>
+        <locationX>506</locationX>
+        <locationY>384</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Outcome__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Income__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Outcome_Category__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Transfer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Outcome_Message</targetReference>
+            </connector>
+            <label>Outcome</label>
+        </rules>
+        <rules>
+            <name>Income</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Income__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Outcome__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Income_Category__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Transfer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Income_Message</targetReference>
+            </connector>
+            <label>Income</label>
+        </rules>
+        <rules>
+            <name>Transfer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Income_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Transfer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Outcome_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Transfer</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Income_Bank</targetReference>
+            </connector>
+            <label>Transfer</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>formulaIncome</name>
+        <dataType>String</dataType>
+        <expression>&quot; :chart_with_upwards_trend: &quot; +  &apos;_&apos; + {!Get_Person.Name} + &apos;_&apos; + &quot; &quot; +  &apos;*&apos; + TEXT({!$Record.CurrencyIsoCode}) + &quot; &quot; +  TEXT({!$Record.Income__c}) + &apos;*&apos; + &quot; (&quot; + {!$Record.Income_Bank_Account__r.Name} + &quot;) &quot; + BR() + 
+TEXT({!$Record.Income_Category__c})+ &quot;: &quot; + &quot;&lt;https://propellerplan.lightning.force.com/&quot; + {!$Record.Id} + &apos;|*&apos; + {!$Record.Description__c} + &apos;*&gt;&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>formulaOutcome</name>
+        <dataType>String</dataType>
+        <expression>&quot; :chart_with_downwards_trend: &quot; +  &apos;_&apos; + {!Get_Person.Name} + &apos;_&apos; + &quot; &quot; +  &apos;*&apos; + TEXT({!$Record.Outcome_Bank_Account__r.CurrencyIsoCode}) + &quot; &quot; +  TEXT({!$Record.Outcome__c}) + &apos;*&apos; + &quot; (&quot; + {!$Record.Outcome_Bank_Account__r.Name} + &quot;) &quot; + BR() + 
+TEXT({!$Record.Outcome_Category__c})+ &quot;: &quot; + &quot;&lt;https://propellerplan.lightning.force.com/&quot; + {!$Record.Id} + &apos;|*&apos; + {!$Record.Description__c} + &apos;*&gt;&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>formulaTransfer</name>
+        <dataType>String</dataType>
+        <expression>&quot; :currency_exchange: &quot; +  &apos;_&apos; + {!Get_Person.Name} + &apos;_&apos; + &quot; &quot; +  &apos;*&apos; + TEXT({!Get_Outcome_Bank.CurrencyIsoCode}) + &quot; &quot; +  TEXT({!$Record.Outcome__c}) + &apos;*&apos; + &quot; (&quot; + {!$Record.Outcome_Bank_Account__r.Name} + &quot;) &quot; + &quot; &quot; + &quot;:arrow_right:&quot; + &quot; &quot; + &apos;*&apos; + TEXT({!Get_Income_Bank.CurrencyIsoCode}) + &quot; &quot; +  TEXT({!$Record.Income__c}) + &apos;*&apos; + &quot; (&quot; + {!$Record.Income_Bank_Account__r.Name} + &quot;) &quot; + BR() + 
+&quot;&lt;https://propellerplan.lightning.force.com/&quot; + {!$Record.Id} + &apos;|*&apos; + {!$Record.Description__c} + &apos;*&gt;&apos;</expression>
+    </formulas>
+    <interviewLabel>Transaction: Send message to Slack {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Transaction: Send message to Slack</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Income_Bank</name>
+        <label>Get Income Bank</label>
+        <locationX>638</locationX>
+        <locationY>492</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Outcome_Bank</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Income_Bank_Account__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Bank_Account__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Outcome_Bank</name>
+        <label>Get Outcome Bank</label>
+        <locationX>638</locationX>
+        <locationY>600</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Send_Transfer_Message</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Outcome_Bank_Account__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Bank_Account__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Person</name>
+        <label>Get Person</label>
+        <locationX>506</locationX>
+        <locationY>276</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Category</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Person__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <object>Transaction__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>Get_Person</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>templateIncome</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>:moneybag: INCOME:
+
+Person: {!Get_Person.Name}
+Category: {!$Record.Income_Category__c}
+Amount: {!$Record.CurrencyIsoCode} {!$Record.Income__c}
+Description: {!$Record.Description__c}
+Bank: {!$Record.Income_Bank_Account__r.Name}
+Date: {!$Record.Date__c}
+
+Link - https://propellerplan.lightning.force.com/lightning/r/Transaction__c/{!$Record.Id}/view</text>
+    </textTemplates>
+    <textTemplates>
+        <name>templateOutcome</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>:small_red_triangle_down:  OUTCOME:
+
+Person: {!Get_Person.Name}
+Category: {!$Record.Outcome_Category__c}
+Amount: {!$Record.CurrencyIsoCode} {!$Record.Outcome__c}
+Description: {!$Record.Description__c}
+Bank: {!$Record.Outcome_Bank_Account__r.Name}
+Date: {!$Record.Date__c}
+
+Link - https://propellerplan.lightning.force.com/lightning/r/Transaction__c/{!$Record.Id}/view</text>
+    </textTemplates>
+    <textTemplates>
+        <name>templateTransfer</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>:currency_exchange: TRANSFER:
+
+Person: {!Get_Person.Name}
+Outcome Amount: {!$Record.CurrencyIsoCode} {!$Record.Outcome__c}
+Outcome Bank: {!$Record.Outcome_Bank_Account__r.Name}
+Income Amount: {!$Record.CurrencyIsoCode} {!$Record.Income__c}
+Income Bank: {!$Record.Income_Bank_Account__r.Name}
+Description: {!$Record.Description__c}
+Date: {!$Record.Date__c}
+
+Link - https://propellerplan.lightning.force.com/lightning/r/Transaction__c/{!$Record.Id}/view</text>
+    </textTemplates>
+</Flow>

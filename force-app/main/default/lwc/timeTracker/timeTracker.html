@@ -1,0 +1,171 @@
+<!--
+ - Created on 19/10/2022.
+ -->
+
+<!-- Time Tracker -->
+<template>
+    <template if:true={isBusy}>
+        <lightning-spinner></lightning-spinner>
+    </template>
+
+    <div class="slds-grid slds-grid_vertical" style="height: 100%;">
+        <div class="slds-page-header">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media" style="align-items: center;">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name="standard:timesheet"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            <div class="slds-page-header__name">
+                                <div class="slds-page-header__name-title">
+                                    <h1>
+                                        <span class="slds-page-header__title slds-truncate" title="Timesheet">Timesheet</span>
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-page-header__col-actions">
+                    <div class="slds-page-header__controls">
+                        <div class="slds-page-header__control">
+                            <lightning-combobox name="progress"
+                                                label="Person"
+                                                variant="label-hidden"
+                                                value={selectedPerson}
+                                                placeholder="Select Person"
+                                                options={personOptions}
+                                                onchange={handleChangePerson}></lightning-combobox>
+                        </div>
+<!--                        <div class="slds-page-header__control">-->
+<!--                            <lightning-input type="date" name="input-date" label="Select date" variant="label-hidden"></lightning-input>-->
+<!--                        </div>-->
+                        <div class="slds-page-header__control">
+                            <lightning-button-group>
+                                <lightning-button-icon icon-name="utility:chevronleft" variant="border-filled"
+                                                       alternative-text="Previous week" title="Previous week"
+                                                       onclick={handlePreviousClick}></lightning-button-icon>
+                                <lightning-button label="This week"
+                                                  onclick={handleThisClick}></lightning-button>
+                                <lightning-button-icon icon-name="utility:chevronright" variant="border-filled"
+                                                       alternative-text="Next week" title="Next week"
+                                                       onclick={handleNextClick}></lightning-button-icon>
+                            </lightning-button-group>
+                        </div>
+                        <div class="slds-page-header__control">
+                            <lightning-button-group>
+                                <lightning-button-icon icon-name="utility:metrics" variant="border-filled"
+                                                       alternative-text="Report: Timecards Daily By Person" title="Report: Timecards Daily By Person"
+                                                       onclick={handleReportClick}></lightning-button-icon>
+                            </lightning-button-group>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <article class="slds-card slds-m-bottom_small slds-p-bottom_small">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Timesheet">
+                <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Case">Case</div>
+                    </th>
+                    <template for:each={weekDays} for:item="day">
+                        <th key={day.id} class="" scope="col" style="text-align:center;width:6.5rem">
+                            <div class="slds-truncate" title={day.formatted}>{day.formatted}</div>
+                        </th>
+                    </template>
+                    <th class="" scope="col" style="width:4.25rem">
+                        <div class="slds-truncate" title="Total:">Total:</div>
+                    </th>
+                    <th class="slds-cell_action-mode" scope="col" style="width:4.75rem">
+                        <div class="slds-truncate slds-assistive-text" title="Actions">Actions</div>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <template for:each={rows} for:item="row" for:index="index">
+                    <tr key={row.id} class="slds-hint-parent">
+                        <th class="slds-cell-edit" data-label="Case" scope="row">
+                            <template if:true={row.taskId}>
+                                <div style="display:grid;">
+                                    <h3 class="slds-tile__title slds-truncate" title={row.subject}>
+                                        <a href={row.url} target=_blank>{row.subject}</a>
+                                    </h3>
+                                    <div class="slds-truncate" title={row.project}>{row.project}</div>
+                                </div>
+                            </template>
+                            <template if:false={row.taskId}>
+                                <lightning-button data-index={index} onclick={handleEditClick} icon-name="utility:new"
+                                                  label="Select case" variant="base" class="slds-button_full-width"></lightning-button>
+                            </template>
+                            <template if:true={row.isEdit}>
+                                <section aria-describedby="dialog-body-id" class="slds-popover slds-popover slds-popover_edit" role="dialog" style="position:absolute;top:0;left:0.0625rem;width:100%">
+                                    <div class="slds-popover__body" id="dialog-body-id">
+                                        <div class="slds-media">
+                                            <c-lookup data-row={index}
+                                                      onsearch={handleTaskSearch}
+                                                      placeholder="Search case"
+                                                      scroll-after-n-items="7"
+                                                      new-record-options={newRecordOptions}
+                                                      onselectionchange={handleLookupChange}
+                                                      onblur={handleLookupBlur}></c-lookup>
+                                        </div>
+                                    </div>
+                                </section>
+                            </template>
+                        </th>
+                        <template for:each={row.logsByDay} for:item="dayLog" for:index="dayIndex">
+                            <td key={dayLog.id} data-label={dayLog.formatted}>
+                                <div class="slds-form-element">
+                                    <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                                        <template if:false={row.virtual}>
+                                            <template if:true={dayLog.durationHours}>
+                                                <template if:false={dayLog.description}>
+                                                    <lightning-icon icon-name="utility:note" variant="warning" size="x-small" class="slds-input__icon slds-input__icon_right" title="Work description missing!"></lightning-icon>
+                                                </template>
+                                            </template>
+                                        </template>
+                                        <input data-row={index} data-day={dayIndex}
+                                               value={dayLog.durationHours}
+                                               name="duration" placeholder="hh:mm"
+                                               class="slds-input"
+                                               disabled={row.virtual}
+                                               oninput={handleDurationChange}
+                                               onfocus={handleDurationFocus}
+                                               onblur={handleDurationBlur} />
+                                    </div>
+                                </div>
+                            </td>
+                        </template>
+                        <td data-label="Total:">
+                            <div class="slds-truncate" title={row.totalHours}>{row.totalHours}</div>
+                        </td>
+                        <td data-label="Actions">
+                            <template if:true={row.taskId}>
+                                <lightning-button-icon data-row={index} onclick={handleEditRow} icon-name="utility:edit" variant="bare" class="slds-p-right_small"></lightning-button-icon>
+                                <lightning-button-icon data-row={index} onclick={handleDeleteRow} icon-name="utility:close" variant="bare"></lightning-button-icon>
+                            </template>
+                        </td>
+                    </tr>
+                </template>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th scope="col">Total:</th>
+                    <template for:each={weekDays} for:item="day">
+                        <th key={day.id} scope="col" class={day.styleClass} style="text-align:center">
+                            <div title={day.durationHours}>{day.durationHours}</div>
+                        </th>
+                    </template>
+                    <th scope="col" class={weekTotalClass}>
+                        <div class="slds-truncate" title={weekTotalDurationHours}>{weekTotalDurationHours}</div>
+                    </th>
+                    <th></th>
+                </tr>
+                </tfoot>
+            </table>
+        </article>
+    </div>
+</template>
