@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>TypeA</fullName>
+        <default>true</default>
+        <label>Type A (North America)</label>
+    </customValue>
+    <customValue>
+        <fullName>TypeC</fullName>
+        <default>false</default>
+        <label>Type C (Europe)</label>
+    </customValue>
+    <customValue>
+        <fullName>TypeG</fullName>
+        <default>false</default>
+        <label>Type G (UK/Ireland)</label>
+    </customValue>
+    <customValue>
+        <fullName>TypeI</fullName>
+        <default>false</default>
+        <label>Type I (Australia/New Zealand)</label>
+    </customValue>
+    <customValue>
+        <fullName>TypeL</fullName>
+        <default>false</default>
+        <label>Type L (Italy)</label>
+    </customValue>
+    <masterLabel>Outlet Standard</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
