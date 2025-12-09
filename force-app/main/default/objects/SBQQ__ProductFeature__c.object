@@ -199,16 +199,6 @@
                     <default>false</default>
                     <label>Software</label>
                 </value>
-                <value>
-                    <fullName>Solar Essentials</fullName>
-                    <default>false</default>
-                    <label>Solar Essentials</label>
-                </value>
-                <value>
-                    <fullName>Upsells</fullName>
-                    <default>false</default>
-                    <label>Upsells</label>
-                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

@@ -174,11 +174,6 @@
                     <default>false</default>
                     <label>Quantity</label>
                 </value>
-                <value>
-                    <fullName>Manodopera__c</fullName>
-                    <default>false</default>
-                    <label>Manodopera__c</label>
-                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -327,21 +322,6 @@
                     <fullName>SBQQ__ProductName__c</fullName>
                     <default>false</default>
                     <label>SBQQ__ProductName__c</label>
-                </value>
-                <value>
-                    <fullName>SBQQ__Feature__c</fullName>
-                    <default>false</default>
-                    <label>SBQQ__Feature__c</label>
-                </value>
-                <value>
-                    <fullName>Feature__c</fullName>
-                    <default>false</default>
-                    <label>Feature__c</label>
-                </value>
-                <value>
-                    <fullName>SBQQ__ProductFeature__r.Name</fullName>
-                    <default>false</default>
-                    <label>SBQQ__ProductFeature__r.Name</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

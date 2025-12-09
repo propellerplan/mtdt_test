@@ -161,17 +161,6 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
-        <fullName>ExternalId__c</fullName>
-        <caseSensitive>false</caseSensitive>
-        <externalId>true</externalId>
-        <label>External ID</label>
-        <length>80</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
-    <fields>
         <fullName>SBQQ__Active__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
@@ -195,7 +184,7 @@
         <fullName>SBQQ__ConditionsMet__c</fullName>
         <deprecated>false</deprecated>
         <description>Choose the behavior for your conditions: All is AND, Any is OR, Custom is a combination of AND/OR.</description>
-        <inlineHelpText>Choose the behavior for your conditions: All is AND, Any is OR, Custom is a combination of AND/OR.</inlineHelpText>
+        <inlineHelpText>Choose the behavior for your conditions: All is AND, Any is OR, Custom is a combination of AND/OR. Help text.</inlineHelpText>
         <label>Conditions Met</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -321,11 +310,6 @@
                     <fullName>OutletLocale__c</fullName>
                     <default>false</default>
                     <label>OutletLocale__c</label>
-                </value>
-                <value>
-                    <fullName>TransportationCost__c</fullName>
-                    <default>false</default>
-                    <label>TransportationCost__c</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -471,10 +455,6 @@
         <columns>NAME</columns>
         <columns>SBQQ__Active__c</columns>
         <columns>UPDATEDBY_USER</columns>
-        <columns>SBQQ__EvaluationEvent__c</columns>
-        <columns>SBQQ__EvaluationOrder__c</columns>
-        <columns>SBQQ__Scope__c</columns>
-        <columns>SBQQ__Type__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

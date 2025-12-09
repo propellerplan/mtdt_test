@@ -59,10 +59,6 @@
                 <behavior>Readonly</behavior>
                 <field>OpportunityType__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Max_Travel_Number__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -438,8 +434,8 @@
             <sortOrder>3</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>SBQQ__CreateOrderFromQuote</actionName>
-            <actionType>CustomButton</actionType>
+            <actionName>SBQQ__Quote__c.SBQQ__CreateOrderLightning</actionName>
+            <actionType>QuickAction</actionType>
             <sortOrder>4</sortOrder>
         </platformActionListItems>
         <platformActionListItems>

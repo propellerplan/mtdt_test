@@ -208,31 +208,6 @@
                     <default>false</default>
                     <label>SBQQ__SpecialPriceType__c</label>
                 </value>
-                <value>
-                    <fullName>SBQQ__Quantity__c</fullName>
-                    <default>false</default>
-                    <label>SBQQ__Quantity__c</label>
-                </value>
-                <value>
-                    <fullName>SBQQ__UnitCost__c</fullName>
-                    <default>false</default>
-                    <label>SBQQ__UnitCost__c</label>
-                </value>
-                <value>
-                    <fullName>SBQQ__ProrateMultiplier__c</fullName>
-                    <default>false</default>
-                    <label>SBQQ__ProrateMultiplier__c</label>
-                </value>
-                <value>
-                    <fullName>SBQQ__ProductOption__r.SBQQ__Feature__r.Name</fullName>
-                    <default>false</default>
-                    <label>SBQQ__ProductOption__r.SBQQ__Feature__r.Name</label>
-                </value>
-                <value>
-                    <fullName>Max_Travel_Number__c</fullName>
-                    <default>false</default>
-                    <label>Max_Travel_Number__c</label>
-                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -326,11 +301,6 @@
                     <fullName>IPPrice__c</fullName>
                     <default>false</default>
                     <label>IPPrice__c</label>
-                </value>
-                <value>
-                    <fullName>Kilometer__c</fullName>
-                    <default>false</default>
-                    <label>Kilometer__c</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

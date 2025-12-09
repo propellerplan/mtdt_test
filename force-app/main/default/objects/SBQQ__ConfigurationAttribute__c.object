@@ -409,26 +409,6 @@
                     <default>false</default>
                     <label>Discount (%)</label>
                 </value>
-                <value>
-                    <fullName>System_Voltage__c</fullName>
-                    <default>false</default>
-                    <label>System_Voltage__c</label>
-                </value>
-                <value>
-                    <fullName>Hardware_Color__c</fullName>
-                    <default>false</default>
-                    <label>Hardware_Color__c</label>
-                </value>
-                <value>
-                    <fullName>Measurement_Standard__c</fullName>
-                    <default>false</default>
-                    <label>Measurement_Standard__c</label>
-                </value>
-                <value>
-                    <fullName>Area__c</fullName>
-                    <default>false</default>
-                    <label>Area__c</label>
-                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -523,27 +503,11 @@
         <picklistValues>
             <picklist>SBQQ__TargetField__c</picklist>
             <values>
-                <fullName>Area%5F%5Fc</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Discount %28%25%29</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Discount %28Amt%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Hardware_Color%5F%5Fc</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Measurement_Standard%5F%5Fc</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>System_Voltage%5F%5Fc</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -597,27 +561,11 @@
         <picklistValues>
             <picklist>SBQQ__TargetField__c</picklist>
             <values>
-                <fullName>Area%5F%5Fc</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Discount %28%25%29</fullName>
                 <default>false</default>
             </values>
             <values>
                 <fullName>Discount %28Amt%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Hardware_Color%5F%5Fc</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Measurement_Standard%5F%5Fc</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>System_Voltage%5F%5Fc</fullName>
                 <default>false</default>
             </values>
             <values>

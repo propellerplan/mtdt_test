@@ -423,11 +423,6 @@
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
-        <displayedFields>
-            <field>Max_Travel_Number__c</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
         <label>Line Editor</label>
     </fieldSets>
     <fieldSets>
@@ -522,19 +517,6 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Max_Travel_Number__c</fullName>
-        <description>To calculate what Viaggio to add</description>
-        <externalId>false</externalId>
-        <label>Max Travel Number</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -1216,11 +1198,6 @@
                     <fullName>QuantityBasedFormulaField__c</fullName>
                     <default>false</default>
                     <label>QuantityBasedFormulaField__c</label>
-                </value>
-                <value>
-                    <fullName>SBQQ__EffectiveStartDate__c</fullName>
-                    <default>false</default>
-                    <label>SBQQ__EffectiveStartDate__c</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

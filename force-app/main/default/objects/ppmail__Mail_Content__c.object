@@ -155,14 +155,6 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
-        <fullName>ppmail__Do_Not_Export__c</fullName>
-        <defaultValue>true</defaultValue>
-        <deprecated>false</deprecated>
-        <label>Do Not Export</label>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>ppmail__External_Template_ID__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>

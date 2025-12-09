@@ -192,11 +192,6 @@
                     <default>false</default>
                     <label>IPSLA__c</label>
                 </value>
-                <value>
-                    <fullName>Area__c</fullName>
-                    <default>false</default>
-                    <label>Area__c</label>
-                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -382,11 +377,6 @@
                     <fullName>SBQQ__Product__c</fullName>
                     <default>false</default>
                     <label>SBQQ__Product__c</label>
-                </value>
-                <value>
-                    <fullName>Area__c</fullName>
-                    <default>false</default>
-                    <label>Area__c</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

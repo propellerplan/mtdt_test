@@ -184,16 +184,6 @@
                     <default>false</default>
                     <label>ReferralCode__c</label>
                 </value>
-                <value>
-                    <fullName>Area__c</fullName>
-                    <default>false</default>
-                    <label>Area__c</label>
-                </value>
-                <value>
-                    <fullName>SBQQ__Feature__c</fullName>
-                    <default>false</default>
-                    <label>SBQQ__Feature__c</label>
-                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

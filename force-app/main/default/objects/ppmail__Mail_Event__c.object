@@ -228,17 +228,6 @@
         <visibleLines>10</visibleLines>
     </fields>
     <fields>
-        <fullName>ppmail__Reason__c</fullName>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>Reason</label>
-        <length>255</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>ppmail__Source__c</fullName>
         <deprecated>false</deprecated>
         <label>Source</label>
