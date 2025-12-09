@@ -105,35 +105,19 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>Cloudrop__Cloud_Drop</name>
+        <name>ppmail__Unlimail</name>
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>Cloudrop__MassMailer_Docs_Classic</name>
-        <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
-        <name>Cloudrop__MassMailer_Docs</name>
-        <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
-        <name>Cloudrop__MassMailer_Lightning</name>
-        <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
-        <name>DEVHUB_ajj5s6d7sightpnvfsdj</name>
-        <type>ConnectedApp</type>
+        <name>ppmail__Unlimail</name>
+        <type>ExternalClientApplication</type>
     </appMenuItems>
     <appMenuItems>
         <name>eagleview__Integration</name>
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>ppmail__Unlimail</name>
-        <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
-        <name>ppmail__Unlimail</name>
+        <name>eagleview__EagleView_for_Salesforce</name>
         <type>ExternalClientApplication</type>
     </appMenuItems>
 </AppMenu>

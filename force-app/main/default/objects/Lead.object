@@ -240,14 +240,11 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
+        <type>Default</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
+        <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
@@ -274,82 +271,6 @@
     <fields>
         <fullName>CleanStatus</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields>
-    <fields>
-        <fullName>Cloudrop__Drip_Campaign_Status__c</fullName>
-        <deprecated>false</deprecated>
-        <label>Drip Campaign Status</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>In Progress</fullName>
-                    <default>false</default>
-                    <label>In Progress</label>
-                </value>
-                <value>
-                    <fullName>Complete</fullName>
-                    <default>false</default>
-                    <label>Complete</label>
-                </value>
-                <value>
-                    <fullName>Aborted</fullName>
-                    <default>false</default>
-                    <label>Aborted</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Cloudrop__Drip_Campaign__c</fullName>
-        <deprecated>false</deprecated>
-        <label>Drip Campaign</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Lead Response Drip</fullName>
-                    <default>false</default>
-                    <label>Lead Response Drip</label>
-                </value>
-                <value>
-                    <fullName>MM Lead Response Drip</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>MM Lead Response Drip</label>
-                </value>
-                <value>
-                    <fullName>MM Short Drip</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>MM Short Drip</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Cloudrop__Drip_Start_Date_Time__c</fullName>
-        <deprecated>false</deprecated>
-        <label>Drip Start Date/Time</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Cloudrop__Invalid__c</fullName>
-        <defaultValue>false</defaultValue>
-        <deprecated>false</deprecated>
-        <label>Invalid Lead</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Company</fullName>
@@ -600,7 +521,6 @@
         <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>LEAD.COMPANY</customTabListAdditionalFields>
         <customTabListAdditionalFields>LEAD.PHONE</customTabListAdditionalFields>
-        <listViewButtons>ppmail__SendUnlimailListEmail_Flow</listViewButtons>
         <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>LEAD.COMPANY</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>FULL_NAME</lookupPhoneDialogsAdditionalFields>

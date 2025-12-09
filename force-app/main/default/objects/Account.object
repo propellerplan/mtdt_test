@@ -811,17 +811,6 @@
         <url>http://www.genwatt.com/genwatt/billing.htm?actname={!Account_Name}</url>
     </webLinks>
     <webLinks>
-        <fullName>Cloudrop__MassMailer_Verify</fullName>
-        <availability>online</availability>
-        <displayType>button</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <linkType>url</linkType>
-        <masterLabel>MassMailer Verify</masterLabel>
-        <openType>replace</openType>
-        <protected>false</protected>
-        <url>{!URLFOR($Site.Prefix+&apos;/apex/Cloudrop__MassMailerVerify&apos;,null,[objType=&apos;Account&apos;,id=Account.Id])}</url>
-    </webLinks>
-    <webLinks>
         <fullName>SBQQ__Amend_Assets</fullName>
         <availability>online</availability>
         <displayType>button</displayType>

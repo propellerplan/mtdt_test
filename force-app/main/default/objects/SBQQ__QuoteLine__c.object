@@ -395,6 +395,11 @@
     <fieldSets>
         <fullName>SBQQ__LineEditor</fullName>
         <availableFields>
+            <field>SBQQ__AdditionalDiscount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>SBQQ__AdditionalQuantity__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -495,11 +500,6 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>SBQQ__PackageCost__c</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
             <field>SBQQ__PackageListTotal__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -585,11 +585,6 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
-            <field>SBQQ__UnitCost__c</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
             <field>SBQQ__Uplift__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -616,7 +611,12 @@
             <isRequired>false</isRequired>
         </displayedFields>
         <displayedFields>
-            <field>SBQQ__AdditionalDiscount__c</field>
+            <field>SBQQ__UnitCost__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SBQQ__PackageCost__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
@@ -1322,6 +1322,97 @@
         <description>Fields to be summarized in Line Editor. Note that field must also be in field set displayed on the page.</description>
         <label>Summary Fields</label>
     </fieldSets>
+    <fields>
+        <fullName>Area__c</fullName>
+        <label>Area</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Area</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Feature__c</fullName>
+        <externalId>false</externalId>
+        <formula>SBQQ__ProductOption__r.Feature_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Feature</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hardware_Color__c</fullName>
+        <label>Hardware Color</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Silver</fullName>
+                    <default>false</default>
+                    <label>Silver</label>
+                </value>
+                <value>
+                    <fullName>Black</fullName>
+                    <default>false</default>
+                    <label>Black</label>
+                </value>
+                <value>
+                    <fullName>Bronze</fullName>
+                    <default>false</default>
+                    <label>Bronze</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Manodopera__c</fullName>
+        <externalId>false</externalId>
+        <formula>SBQQ__Product__r.Manodopera__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Manodopera</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Measurement_Standard__c</fullName>
+        <label>Measurement Standard</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Imperial</fullName>
+                    <default>false</default>
+                    <label>Imperial</label>
+                </value>
+                <value>
+                    <fullName>Metric</fullName>
+                    <default>false</default>
+                    <label>Metric</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
     <fields>
         <fullName>Original_Price_Formula__c</fullName>
         <formula>SBQQ__OriginalPrice__c</formula>
@@ -3348,6 +3439,30 @@ IF(SBQQ__Quantity__c == SBQQ__PriorQuantity__c, 0, (SBQQ__ProratedListPrice__c *
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>System_Voltage__c</fullName>
+        <label>System Voltage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>120V</fullName>
+                    <default>false</default>
+                    <label>120V</label>
+                </value>
+                <value>
+                    <fullName>240V</fullName>
+                    <default>false</default>
+                    <label>240V</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <label>Quote Line</label>
     <nameField>

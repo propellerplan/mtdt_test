@@ -268,6 +268,93 @@
         <label>SearchFilters</label>
     </fieldSets>
     <fields>
+        <fullName>Area__c</fullName>
+        <description>Area of transportation</description>
+        <label>Area</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Area</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Feature_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>SBQQ__Feature__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Feature Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hardware_Color__c</fullName>
+        <label>Hardware Color</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Silver</fullName>
+                    <default>false</default>
+                    <label>Silver</label>
+                </value>
+                <value>
+                    <fullName>Black</fullName>
+                    <default>false</default>
+                    <label>Black</label>
+                </value>
+                <value>
+                    <fullName>Bronze</fullName>
+                    <default>false</default>
+                    <label>Bronze</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Manodopera__c</fullName>
+        <externalId>false</externalId>
+        <formula>SBQQ__OptionalSKU__r.Manodopera__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Manodopera</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Measurement_Standard__c</fullName>
+        <label>Measurement Standard</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Imperial</fullName>
+                    <default>false</default>
+                    <label>Imperial</label>
+                </value>
+                <value>
+                    <fullName>Metric</fullName>
+                    <default>false</default>
+                    <label>Metric</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>SBQQ__AppliedImmediatelyContext__c</fullName>
         <deprecated>false</deprecated>
         <description>&apos;Apply Immediately on Select&apos; applies changes immediately on selection of product, whereas &apos;Apply Immediately on Quantity Change&apos; does that on change of quantity. &apos;Always&apos; applies changes both the times, on selection of product and on change of quantity.</description>
@@ -778,12 +865,7 @@
                 <value>
                     <fullName>Both</fullName>
                     <default>false</default>
-                    <label>Package &amp; Components</label>
-                </value>
-                <value>
-                    <fullName>Entire Hierarchy</fullName>
-                    <default>false</default>
-                    <label>Entire Hierarchy</label>
+                    <label>Both</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -849,6 +931,29 @@
         <label>Uplifted By Package</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>System_Voltage__c</fullName>
+        <label>System Voltage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>120V</fullName>
+                    <default>false</default>
+                    <label>120V</label>
+                </value>
+                <value>
+                    <fullName>240V</fullName>
+                    <default>false</default>
+                    <label>240V</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <label>Product Option</label>
     <nameField>

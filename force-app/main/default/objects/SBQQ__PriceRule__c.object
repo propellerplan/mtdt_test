@@ -307,6 +307,11 @@
                     <default>false</default>
                     <label>IndustryPrice__c</label>
                 </value>
+                <value>
+                    <fullName>TransportationCost__c</fullName>
+                    <default>false</default>
+                    <label>TransportationCost__c</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -346,12 +351,23 @@
                     <default>false</default>
                     <label>Calculator</label>
                 </value>
+                <value>
+                    <fullName>Product Option</fullName>
+                    <default>false</default>
+                    <label>Product Option</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
     <label>Price Rule</label>
     <listViews>
         <fullName>SBQQ__All</fullName>
+        <columns>NAME</columns>
+        <columns>SBQQ__Active__c</columns>
+        <columns>SBQQ__EvaluationEvent__c</columns>
+        <columns>SBQQ__ConfiguratorEvaluationEvent__c</columns>
+        <columns>SBQQ__EvaluationOrder__c</columns>
+        <columns>SBQQ__TargetObject__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

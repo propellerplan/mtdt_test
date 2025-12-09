@@ -387,6 +387,21 @@
                     <default>false</default>
                     <label>OpportunityType__c</label>
                 </value>
+                <value>
+                    <fullName>Area__c</fullName>
+                    <default>false</default>
+                    <label>Area__c</label>
+                </value>
+                <value>
+                    <fullName>Max_Travel_Number__c</fullName>
+                    <default>false</default>
+                    <label>Max_Travel_Number__c</label>
+                </value>
+                <value>
+                    <fullName>Feature__c</fullName>
+                    <default>false</default>
+                    <label>Feature__c</label>
+                </value>
             </valueSetDefinition>
             <valueSettings>
                 <controllingFieldValue>Quote</controllingFieldValue>
@@ -405,9 +420,17 @@
                 <valueName>OpportunityType__c</valueName>
             </valueSettings>
             <valueSettings>
+                <controllingFieldValue>Quote</controllingFieldValue>
+                <valueName>Max_Travel_Number__c</valueName>
+            </valueSettings>
+            <valueSettings>
                 <controllingFieldValue>Quote Line</controllingFieldValue>
                 <controllingFieldValue>Product Option</controllingFieldValue>
                 <valueName>SBQQ__ProductCode__c</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Quote Line</controllingFieldValue>
+                <valueName>Feature__c</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Product Option</controllingFieldValue>
@@ -417,6 +440,10 @@
             <valueSettings>
                 <controllingFieldValue>Product Option</controllingFieldValue>
                 <valueName>SBQQ__Quantity__c</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Configuration Attributes</controllingFieldValue>
+                <valueName>Area__c</valueName>
             </valueSettings>
         </valueSet>
     </fields>

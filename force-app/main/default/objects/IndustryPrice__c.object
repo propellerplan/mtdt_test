@@ -230,6 +230,16 @@
         </valueSet>
     </fields>
     <label>Industry Price</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>IPIndustry__c</columns>
+        <columns>IPProduct__c</columns>
+        <columns>IPSLA__c</columns>
+        <columns>IPPrice__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <displayFormat>IP-{0000}</displayFormat>
         <label>Industry Price Name</label>

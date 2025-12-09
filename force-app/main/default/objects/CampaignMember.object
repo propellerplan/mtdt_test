@@ -136,48 +136,6 @@
         <fullName>City</fullName>
     </fields>
     <fields>
-        <fullName>Cloudrop__Counter__c</fullName>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>Counter</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Cloudrop__Date_Time_of_email_sent__c</fullName>
-        <deprecated>false</deprecated>
-        <label>Date/Time of email sent</label>
-        <required>false</required>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Cloudrop__Email_Sent__c</fullName>
-        <defaultValue>false</defaultValue>
-        <deprecated>false</deprecated>
-        <label>Email Sent</label>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Cloudrop__MassMailer_Campaign_Member_Status__c</fullName>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>MassMailer Campaign Member Status</label>
-        <length>255</length>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Cloudrop__Test_Record__c</fullName>
-        <defaultValue>false</defaultValue>
-        <deprecated>false</deprecated>
-        <label>Test Record</label>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>CompanyOrAccount</fullName>
     </fields>
     <fields>
