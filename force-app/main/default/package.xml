@@ -2,43 +2,11 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>*</members>
-        <name>BusinessProcess</name>
+        <name>DashboardFolder</name>
     </types>
     <types>
         <members>*</members>
-        <name>CompactLayout</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>FieldSet</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>PlatformEventSubscriberConfig</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>RecordType</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>SearchCustomization</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>SearchOrgWideObjectConfig</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ValidationRule</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>WebLink</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>Settings</name>
+        <name>ReportFolder</name>
     </types>
     <version>64.0</version>
 </Package>
