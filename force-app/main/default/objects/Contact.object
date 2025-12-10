@@ -2,178 +2,41 @@
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
 
 <fields>
-    <fullName>Email_1__c</fullName>
+    <fullName>Languages__c</fullName>
     <externalId>false</externalId>
-    <label>Email 1</label>
+    <label>Languages</label>
+    <length>100</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
-    <trackHistory>false</trackHistory>
-    <type>Email</type>
+    <type>Text</type>
     <unique>false</unique>
 </fields>
 
-<recordTypes>
-    <fullName>Internal_IB</fullName>
-    <active>true</active>
-    <compactLayoutAssignment>Contact_Compact</compactLayoutAssignment>
-    <description>Contact for Legal Entities</description>
-    <label>Billing</label>
-    <picklistValues>
-        <picklist>LeadSource</picklist>
-        <values>
-            <fullName>Website</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Name</picklist>
-        <values>
-            <fullName>Dr%2E</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Mr%2E</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Mrs%2E</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Ms%2E</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Prof%2E</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Workload__c</picklist>
-        <values>
-            <fullName>Full-time</fullName>
-            <default>true</default>
-        </values>
-        <values>
-            <fullName>Part-time</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>globalradar__Dover_Batch_Status__c</picklist>
-        <values>
-            <fullName>Completed</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Sent</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>globalradar__Gender__c</picklist>
-        <values>
-            <fullName>Female</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Male</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>globalradar__Screening_Level__c</picklist>
-        <values>
-            <fullName>Clear</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Fuzzy</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Match</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>globalradar__Source_Of_Wealth__c</picklist>
-        <values>
-            <fullName>Business</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Employment</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FamilyWealth</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Inheritence</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>LegalSettlement</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>LifeSavings</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Lottery</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Marriage</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Other</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>zisf__Zoom_Clean_Status__c</picklist>
-        <values>
-            <fullName>Clean</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Company Clean Only</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Different</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Error</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>In Sync</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Not Compared</fullName>
-            <default>true</default>
-        </values>
-        <values>
-            <fullName>Not Found</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-</recordTypes>
-
-<compactLayouts>
-    <fullName>Contact_Compact</fullName>
-    <fields>Name</fields>
-    <fields>MobilePhone</fields>
-    <fields>Email</fields>
-    <fields>Birthdate</fields>
-    <label>Contact Compact</label>
-</compactLayouts>
+<fields>
+    <fullName>Level__c</fullName>
+    <label>Level</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <default>false</default>
+                <label>Secondary</label>
+                <valueName>Secondary</valueName>
+            </value>
+            <value>
+                <default>false</default>
+                <label>Tertiary</label>
+                <valueName>Tertiary</valueName>
+            </value>
+            <value>
+                <default>false</default>
+                <label>Primary</label>
+                <valueName>Primary</valueName>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</fields>
 </CustomObject>
